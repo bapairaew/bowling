@@ -1,0 +1,11 @@
+.game {
+  text-align: center;
+}
+
+.game__header {
+  padding: 20px;
+}
+
+.game__intro {
+  font-size: large;
+}
