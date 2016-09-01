@@ -13,7 +13,7 @@ class Lane extends Component {
         </div>
         <div className="lane__controller">
           <button className="lane__controller__button" onClick={e => onRoll(e, Math.floor(Math.random() * 11))}>Roll</button>
-          <button className="lane__controller__button lane__controller__button--highlight" onClick={() => onReset()}>New Game</button>
+          <button className="lane__controller__button lane__controller__button--highlight" onClick={e => onReset(e)}>New Game</button>
         </div>
       </div>
     );
