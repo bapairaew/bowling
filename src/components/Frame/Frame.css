@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.frame--last {
+  width: 75px;
+}
+
 .frame__roll {
   display: inline-block;
   width: calc(50% - 1px); /* TODO: */
@@ -17,15 +21,19 @@
   vertical-align: top;
 }
 
+.frame--last .frame__roll {
+  width: calc(33.4% - 1px); /* TODO: */
+}
+
+.frame__roll--last {
+  border-right: none;
+}
+
 .frame__text {
   height: 100%;
   line-height: 27px;
   font-weight: 300;
   text-align: center;
-}
-
-.frame__roll--last {
-  border-right: none;
 }
 
 .frame__score {

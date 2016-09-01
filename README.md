@@ -34,7 +34,7 @@
   - ~~Lane component~~
   - ~~Frame component~~
   - ~~Score component~~
-- Last frame: additional rolls
+- ~~Last frame: additional rolls~~
 - Game-like UI
   - Random scores
   - Bowling animation

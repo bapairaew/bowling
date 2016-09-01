@@ -6,21 +6,24 @@ import { getScore, isStrike, isSpare } from '../../utility';
 import './Frames.css';
 
 class Frames extends Component {
+  // TODO: simplify this
   // calculate cummulative score from frame 0 to n
   calculateScore(frames, n) {
     let score = 0;
     for (let i = 0; i <= n; i++) {
-      if (i < frames.length) {
-        const frame = frames[i];
+      const frame = frames[i];
+      if (i === frames.length - 1) {
+        score += getScore(frame[0]) + getScore(frame[1]) + getScore(frame[2]);
+      } else if (i < frames.length - 1) {
         // strike / spare bonus
         const nextFrame = frames[i + 1];
-        // check if already rolled
+        // check if next frame is already rolled
         if (nextFrame && nextFrame[0] !== null) {
           if (isSpare(frame)) {
             score += getScore(nextFrame[0]);
           } else if (isStrike(frame)) {
             score += getScore(nextFrame[0]);
-            if (!isStrike(nextFrame)) {
+            if (!isStrike(nextFrame) || i === frames.length - 2) {
               score += getScore(nextFrame[1]);
             } else if (i + 2 < frames.length) {
               score += getScore(frames[i + 2][0]);
@@ -41,7 +44,7 @@ class Frames extends Component {
       // show score frames before current frame and the current frame if there is a first roll
       const showScore = i <= currentFrameIndex && frames[i][0] !== null;
       frameElements.push(
-        <Frame key={i} frame={frames[i]} score={this.calculateScore(frames, i)} showScore={showScore} />
+        <Frame key={i} frame={frames[i]} score={this.calculateScore(frames, i)} showScore={showScore} isLast={i === frames.length - 1} />
       );
     }
     return frameElements;

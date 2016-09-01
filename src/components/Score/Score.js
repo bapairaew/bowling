@@ -6,7 +6,7 @@ class Score extends Component {
     const {score} = this.props;
     return (
       <div className="score">
-        <div className="score__text">Total score</div>
+        <div className="score__text">Total</div>
         <div className="score__text score__text--highlight">{score}</div>
       </div>
     );
