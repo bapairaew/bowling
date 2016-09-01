@@ -1,4 +1,5 @@
 import * as types from '../constants/ActionTypes';
+import { isStrike } from '../utility';
 
 const FRAME_NUMBER = 10;
 
@@ -20,11 +21,6 @@ const roll = (frame, score) => {
   return frame[0] === null ? [score, null] : [frame[0], score];
 };
 
-// safely get score
-const getScore = (score) => {
-  return score ? score : 0;
-};
-
 const bowling = (state = initialState, action) => {
   switch (action.type) {
     case types.ROLL:
@@ -37,9 +33,8 @@ const bowling = (state = initialState, action) => {
       const currentFrame = frames[state.currentFrame];
       return {
         frames: frames,
-        // if 2 rolls or strike, move to next frame
-        currentFrame: currentFrame[1] !== null || getScore(currentFrame[0]) + getScore(currentFrame[1]) === FRAME_NUMBER ?
-          state.currentFrame + 1 : state.currentFrame
+        // if 2 rolled or strike, move to next frame
+        currentFrame: currentFrame[1] !== null || isStrike(currentFrame) ? state.currentFrame + 1 : state.currentFrame
       };
     case types.RESET:
       return {

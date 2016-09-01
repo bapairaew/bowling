@@ -23,10 +23,10 @@ class Lane extends Component {
         </div>
         <div className="lane__controller">
           <h1 className="lane__controller__header">Please click the number of pins knocked down</h1>
-          { this.renderControllerButtons(1, 6) }
+          { this.renderControllerButtons(0, 6) }
           <LineBreaker />
           { this.renderControllerButtons(7, 10) }
-          <button className="lane__controller__button lane__controller__button--highlight" onClick={() => onReset()}>Reset</button>
+          <button className="lane__controller__button lane__controller__button--highlight" onClick={() => onReset()}>New Game</button>
         </div>
       </div>
     );

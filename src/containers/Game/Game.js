@@ -7,10 +7,10 @@ import './Game.css';
 
 class Game extends Component {
   render() {
-    const { dispatch, frames } = this.props;
+    const { dispatch, frames, currentFrame } = this.props;
     return (
       <div className="game">
-        <Frames frames={frames} />
+        <Frames frames={frames} currentFrame={currentFrame} />
         <Lane onRoll={(e, s) => { dispatch(roll(s)) }} onReset={() => { dispatch(reset()) }} />
       </div>
     );
@@ -22,4 +22,4 @@ Game.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-export default connect(state => { return { frames: state.frames }; })(Game);
+export default connect(state => state)(Game);

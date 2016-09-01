@@ -30,15 +30,15 @@
 
 ## Tasks
 - ~~Set up project with Redux~~
-- Game container
-  - Lane component
-  - Frame component
-  - Score component
+- ~~Game container~~
+  - ~~Lane component~~
+  - ~~Frame component~~
+  - ~~Score component~~
+- Last frame: additional rolls
 - Game-like UI
   - Random scores
   - Bowling animation
   - End game screen
-- Last frame: additional rolls
 - Multiplayers
   - Socket.io
   - React routing
