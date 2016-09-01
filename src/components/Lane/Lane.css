@@ -1,6 +1,9 @@
 .lane__screen {
   height: 400px;
   position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  border: 1px solid #ccc;
 }
 
 .lane__screen__header {
@@ -62,4 +65,12 @@
 
 .lane__controller__button--highlight:focus {
   border-color: #333 #333 #000 #333;
+}
+
+.bowling {
+  width: 35px;
+  height: 35px;
+  background-color: #555;
+  border-radius: 50%;
+  margin: 0 auto;
 }
