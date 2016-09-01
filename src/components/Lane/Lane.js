@@ -1,9 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import './Lane.css';
 import LineBreaker from '../LineBreaker/LineBreaker';
 
 class Lane extends Component {
+  renderControllerButtons(start, end) {
+    const { onRoll } = this.props;
+    const buttons = [];
+    for (let i = start; i <= end; i++) {
+      buttons.push(
+        <button key={i} className="lane__controller__button" onClick={e => onRoll(e, i)}>{i}</button>
+      );
+    }
+    return buttons;
+  }
+
   render() {
+    const { onReset } = this.props;
     return (
       <div className="lane">
         <div className="lane__screen">
@@ -11,22 +23,19 @@ class Lane extends Component {
         </div>
         <div className="lane__controller">
           <h1 className="lane__controller__header">Please click the number of pins knocked down</h1>
-          <button className="lane__controller__button">0</button>
-          <button className="lane__controller__button">1</button>
-          <button className="lane__controller__button">2</button>
-          <button className="lane__controller__button">3</button>
-          <button className="lane__controller__button">4</button>
-          <button className="lane__controller__button">5</button>
+          { this.renderControllerButtons(1, 6) }
           <LineBreaker />
-          <button className="lane__controller__button">6</button>
-          <button className="lane__controller__button">7</button>
-          <button className="lane__controller__button">8</button>
-          <button className="lane__controller__button">9</button>
-          <button className="lane__controller__button lane__controller__button--highlight">Reset</button>
+          { this.renderControllerButtons(7, 10) }
+          <button className="lane__controller__button lane__controller__button--highlight" onClick={() => onReset()}>Reset</button>
         </div>
       </div>
     );
   }
+}
+
+Lane.propTypes = {
+  onRoll: PropTypes.func.isRequired,
+  onReset: PropTypes.func.isRequired
 }
 
 export default Lane;
