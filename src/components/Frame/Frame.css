@@ -1,0 +1,36 @@
+.frame {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.frame__roll {
+  display: inline-block;
+  width: calc(50% - 1px); /* TODO: */
+  height: 50%;
+  border-right: 1px solid #ccc;
+  vertical-align: top;
+}
+
+.frame__text {
+  height: 100%;
+  line-height: 27px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.frame__roll--last {
+  border-right: none;
+}
+
+.frame__score {
+  display: inline-block;
+  width: calc(100% - 1px); /* TODO: */
+  height: 50%;
+  border-top: 1px solid #ccc;
+}

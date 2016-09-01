@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import Frames from '../../components/Frames/Frames';
+import Lane from '../../components/Lane/Lane';
 import './Game.css';
 
 class Game extends Component {
   render() {
     return (
       <div className="game">
-        <div className="game__header">
-          <h2>Bowling Challenge</h2>
-        </div>
+        <Frames />
+        <Lane />
       </div>
     );
   }
