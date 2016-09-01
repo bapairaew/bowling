@@ -36,7 +36,7 @@
   - ~~Score component~~
 - ~~Last frame: additional rolls~~
 - Game-like UI
-  - Random scores
+  - ~~Random scores~~
   - Bowling animation
   - End game screen
 - Multiplayers
