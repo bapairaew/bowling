@@ -33,7 +33,7 @@ const rollLastFrame = (frame, score) => {
     return [frame[0],
       isStrike(frame) ? score : Math.min(score, 10 - frame[0]),  // not allow knocking down more than ten pins unless it is a strike
       null];
-  } else if (isStrike(frame) || isSpare(frame)) {
+  } else if ((isStrike(frame) || isSpare(frame)) && frame[3] !== null) {
     // third row
     // allow additional roll if strike or spare
     return [frame[0], frame[1],
