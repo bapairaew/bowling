@@ -1,5 +1,36 @@
 # Bowling
 
+## Instruction
+
+`npm start` to start the development server
+
+## Backlog
+- ~~Set up project with Redux~~
+- ~~Game container~~
+  - ~~Lane component~~
+  - ~~Frame component~~
+  - ~~Score component~~
+- ~~Last frame: additional rolls~~
+- Game-like UI
+  - ~~Random scores~~
+  - Bowling animation
+    - Fix bowling pins position is not persistence
+    - Better bowling animation
+      - Bowling ball should move
+      - Pins should move instead of fading
+      - Collusion calculation
+  - End game screen popup
+- Multiplayers
+  - Socket.io
+    - realtime gameplay
+  - React routing for more pages
+    - / for create/join room
+    - /:id for game
+  - Join room container
+- Universal rendering: for web crawlers
+- Optimisation
+  - Use less/scss/inline-style for style variables for better scaling
+
 ## Task description
 >  Bowling Challenge
 
@@ -26,21 +57,3 @@
 * Create a method that randomly throws a roll (one roll is 1-10 pins knocked down), and progresses the scoring.
 * Support multiple players.
 * Or anything fun you can think of :)
-
-
-## Tasks
-- ~~Set up project with Redux~~
-- ~~Game container~~
-  - ~~Lane component~~
-  - ~~Frame component~~
-  - ~~Score component~~
-- ~~Last frame: additional rolls~~
-- Game-like UI
-  - ~~Random scores~~
-  - Bowling animation
-  - End game screen
-- Multiplayers
-  - Socket.io
-  - React routing
-  - Join room container
-- Universal rendering
